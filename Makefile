@@ -2,7 +2,7 @@ export GO111MODULE=on
 # Just builds
 .PHONY: dep
 dep:
-	go mod download; go mod vendor -v
+	go mod download
 
 .PHONY: dep-up
 dep-up:
@@ -10,14 +10,14 @@ dep-up:
 
 .PHONY: build
 build:
-	go build -mod=vendor -o fnserver ./cmd/fnserver 
+	go build -o fnserver ./cmd/fnserver 
 
 .PHONY: generate
 generate: api/agent/grpc/runner.pb.go
 
 .PHONY: install
 install:
-	go build -mod=vendor -o ${GOPATH}/bin/fnserver ./cmd/fnserver 
+	go build -o ${GOPATH}/bin/fnserver ./cmd/fnserver 
 
 .PHONY: checkfmt
 checkfmt:
@@ -52,11 +52,11 @@ fn-test-utils: checkfmt
 
 .PHONY: test-middleware
 test-middleware: test-basic
-	cd examples/middleware && go build -mod=vendor
+	cd examples/middleware && go build
 
 .PHONY: test-extensions
 test-extensions: test-basic
-	cd examples/extensions && go build -mod=vendor
+	cd examples/extensions && go build
 
 .PHONY: test-basic
 test-basic: checkfmt pull-images fn-test-utils fn-status-checker
@@ -96,11 +96,11 @@ pull-images: img-hello img-mysql img-postgres img-minio img-busybox
 
 .PHONY: test-datastore
 test-datastore:
-	cd api/datastore && go test -mod=vendor -v ./...
+	cd api/datastore && go test  ./...
 
 .PHONY: test-log-datastore
 test-log-datastore:
-	cd api/logs && go test -v -mod=vendor ./...
+	cd api/logs && go test  ./...
 
 .PHONY: test-build-arm
 test-build-arm:
