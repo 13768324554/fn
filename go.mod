@@ -32,7 +32,6 @@ require (
 	github.com/prometheus/client_golang v0.9.0
 	github.com/prometheus/common v0.0.0-20181019103554-16b4535ad14a // indirect
 	github.com/sirupsen/logrus v1.1.1
-	github.com/ugorji/go v1.1.1 // indirect
 	go.opencensus.io v0.17.0
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
 	golang.org/x/sys v0.0.0-20181019160139-8e24a49d80f8
