@@ -10,7 +10,7 @@ require (
 	github.com/dchest/siphash v1.2.0
 	github.com/fnproject/fdk-go v0.0.0-20180927181437-1c783fe49625
 	github.com/fsnotify/fsnotify v1.4.7
-	github.com/fsouza/go-dockerclient v0.0.0-20181016222407-623c4c4b51ec
+	github.com/fsouza/go-dockerclient v1.3.1
 	github.com/garyburd/redigo v1.6.0
 	github.com/gin-contrib/cors v0.0.0-20170318125340-cf4846e6a636
 	github.com/gin-contrib/sse v0.0.0-20170109093832-22d885f9ecc7 // indirect
@@ -32,7 +32,7 @@ require (
 	github.com/prometheus/client_golang v0.9.0
 	github.com/prometheus/common v0.0.0-20181019103554-16b4535ad14a // indirect
 	github.com/sirupsen/logrus v1.1.1
-	github.com/ugorji/go/codec v0.0.0-20181022190402-e5e69e061d4f // indirect
+	github.com/ugorji/go v1.1.1 // indirect
 	go.opencensus.io v0.17.0
 	golang.org/x/net v0.0.0-20181017193950-04a2e542c03f
 	golang.org/x/sys v0.0.0-20181019160139-8e24a49d80f8

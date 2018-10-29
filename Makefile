@@ -10,14 +10,14 @@ dep-up:
 
 .PHONY: build
 build:
-	go build -o fnserver ./cmd/fnserver 
+	go build -mod=vendor -o fnserver ./cmd/fnserver 
 
 .PHONY: generate
 generate: api/agent/grpc/runner.pb.go
 
 .PHONY: install
 install:
-	go build -o ${GOPATH}/bin/fnserver ./cmd/fnserver 
+	go build -mod=vendor -o ${GOPATH}/bin/fnserver ./cmd/fnserver 
 
 .PHONY: checkfmt
 checkfmt:
@@ -96,11 +96,11 @@ pull-images: img-hello img-mysql img-postgres img-minio img-busybox
 
 .PHONY: test-datastore
 test-datastore:
-	cd api/datastore && go test  ./...
+	cd api/datastore && go -mod=vendor test  ./...
 
 .PHONY: test-log-datastore
 test-log-datastore:
-	cd api/logs && go test  ./...
+	cd api/logs && go test -mod=vendor ./...
 
 .PHONY: test-build-arm
 test-build-arm:
